@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    
+}
+.about{
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    height: 15vh;
+    z-index: 1;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    display: block;
+    text-align: center;
+    
+}
+h2{
+    display:block;
+    text-align: center;
+}
+
+.dimensions{
+    width: 100%;
+    height: 85vh;
+    position: relative;
+    display: flex;
+    
+}
+.two{
+    width: 50%;
+    background-color: rgb(255, 126, 126);
+    position: fixed;
+    top: 15vh;
+    
+}
+.three{
+    width: 50%;
+    background-color: rgb(130, 226, 123);
+    position: fixed;
+    display:flex;
+    top: 15vh;
+    left: 50%;
+    justify-content: center;
+    
+}
+.hands{
+    position: relative;
+    top: -10vh;
+    width: 70%;
+    height: 105vh;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-between;
+    gap: 7%;
+
+}
+.finger{
+    position: relative;
+    width: 15%;
+    height: 35vh;
+    background-color: rgb(255, 212, 184);
+    
+    display: flex;
+}
+.nail{
+    position: relative;
+    background-color: red;
+    height: 25%;
+    width: 70%;
+    display: flex;
+
+}
+.finger.top{
+    justify-content: center;
+    align-items: flex-end;
+    border-radius:0% 0% 40% 40%;
+
+}
+.finger.bottom{
+    justify-content: center;
+    border-radius:40% 40% 0% 0% ;
+}
+.nail.top{
+    top: 0.5vh;
+    border-radius:30% 30% 50% 50%;
+}
+.nail.bottom{
+    top: -0.6vh;
+    border-radius: 50% 50% 30% 30%;
+}
