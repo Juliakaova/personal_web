@@ -1,77 +1,361 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-body{
+
+body {
     height: 100vh;
-    
+    background-color: #70C1B3;
+
 }
-.about{
+
+.about {
+    /*z-index 3 para que se superponga encima de los elemento de las seccion two que se esconden debajo de esta*/
     position: fixed;
-    background-color: black;
+    background-color: rgb(42, 42, 42);
     width: 100%;
-    height: 15vh;
-    z-index: 1;
+    height: 14vh;
+    z-index: 3;
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-h1{
+
+h1 {
     display: block;
     text-align: center;
+    color: #F3FFBD;
+    font-family: "Boldonse", system-ui;
     
-}
-h2{
-    display:block;
-    text-align: center;
+
 }
 
-.dimensions{
-    width: 100%;
-    height: 85vh;
+h2 {
+    display: block;
+    text-align: center;
+    color: #F3FFBD;
+}
+
+.dimensions {
+    /* la dimension del height de estas secciones depende del height de la sección about, de esta forma reparte en dos espacios iguales el espacio restante para las dos secciones con la etiqueta dimensions*/
+    height: 43vh;
     position: relative;
     display: flex;
-    
+
 }
-.two{
-    width: 50%;
-    background-color: rgb(255, 126, 126);
+
+.two {
+    /*z-index 2 para que se superponga encima de las manos y lo que sale quede escondido. Position fixed para sacarlo del flujo normal y posicionarlo justo debajo de la sección about */
+    width: 100%;
+    background-color: #70C1B3
+        /*#d06161 */
+    ;
     position: fixed;
-    top: 15vh;
-    
-}
-.three{
-    width: 50%;
-    background-color: rgb(130, 226, 123);
-    position: fixed;
-    display:flex;
-    top: 15vh;
-    left: 50%;
+    top: 14vh;
+    z-index: 2;
+    display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.camera {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 70%;
+    background-color: rgb(249, 141, 141);
+    border-radius: 10%;
+}
+
+.shutter {/*lo posiciono desde el bottom porque al animarlo y restarle altura necesito que mantenga su posición en el bottom*/
+    position: absolute;
+    bottom: 98%;
+    left: 13%;
+    width: 20%;
+    height: 15%;
+    background-color: rgb(231, 114, 114);
+    border-radius: 15% 15% 5% 5%;
+    transition: 1s;
     
 }
-.hands{
+.click{
+    height: 10%;
+    transition: 1s;
+}
+
+
+.line {
+    /* una línea para delimitar el límite de las figuras de la sección three*/
+    background-color: #247BA0;
+    width: 80%;
+    height: 4px;
+    position: absolute;
+    bottom: 0;
+
+}
+
+/*.brush{
+    position: absolute;
+    background-image:linear-gradient(to top,#cc903d, #ddc402) ;
+    box-shadow: 0px 0px 3px #cc903d;
+    width: 2%;
+    height: 10vh;
+    bottom: 50%;
+    right: 4.4%;
+    border-radius:50%50% 0% 0%;
+}
+.two img{
+    scale: 89%;
+    position: absolute;
+    size: 20dvh;
+    bottom: 3%;
+    right:-2%;
+    width: 40%;
+    filter: brightness(85%);
+    height: 50%;
+    z-index: 1;
+}*/
+.lens {
+    /*para intentar mantener la forma circular en el mayor rango posible de medidas de pantalle uso la proporción 1/1 de aspect-ratio, y una animación que gira el div entero y se hace notar por el tipo de border */
+    border-radius: 50%;
+    height: 65%;
+    aspect-ratio: 1/1;
+    background-color: #dd6c02;
+    border: 10px dashed rgb(153, 79, 10);
+    box-sizing: border-box;
+    animation: rotate 8s 1s forwards infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.three {
+    width: 100%;
+    background-color: #70C1B3;
+    position: fixed;
+    display: flex;
+    top: calc(14vh + 43vh);
+    justify-content: center;
+
+
+}
+
+.hands {
+    /* se posiciona en relativo para poder subir las manos por debajo de la sección .about, por eso su medida es superior a la de su elemento padre, como el padre mide 43vh le sume 20vh y eso entre dos son 10vh que "sobresalen" fuera de la composición y por eso uso top -10vh, z index 1 para que quede encima del círculo */
     position: relative;
     top: -10vh;
     width: 70%;
-    height: 105vh;
-    display:flex;
+    height: 63vh;
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-content: space-between;
     gap: 7%;
+    z-index: 1;
+
 
 }
-.finger{
+
+.finger {
+    /*Display flex para ubicar la uñas posteriormente*/
     position: relative;
-    width: 15%;
-    height: 35vh;
+    width: 16%;
+    height: 24vh;
     background-color: rgb(255, 212, 184);
-    
     display: flex;
+    box-shadow: 4px 0px 8px #343434;
 }
+
+.nail {
+    position: relative;
+    background-color: red;
+    height: 25%;
+    width: 70%;
+}
+
+.finger.top {
+    /*centrarlas y ubicarlas en el bottom de su elemento padre con flex-end */
+    justify-content: center;
+    align-items: flex-end;
+    border-radius: 0% 0% 40% 40%;
+    transition: 1s;
+    /*animation: handtop 3s 4s forwards infinite;*/
+}
+
+.marginTop {
+    /*esta clase la añadiré con javascript para animar los dedos, usando margin y mo alterando el top, ya que cada uno tiene su propio top y esto me lo simplifica*/
+    margin-top: 5%;
+    transition: 1s;
+}
+
+.marginBottom {
+    margin-bottom: 5%;
+    transition: 1s;
+}
+
+.finger.bottom {
+    /*centrar las uñas inferioresy darles forma, al estar en relative no necesito especificar que estén arriba*/
+    justify-content: center;
+    border-radius: 40% 40% 0% 0%;
+    transition: 1s;
+}
+
+/*cambio la altura de los dedos que no serían el indice para que simule más la apariencia de mano*/
+.finger:nth-child(3) {
+    top: -3%;
+}
+
+.finger:nth-child(1) {
+    top: -4%;
+}
+
+.finger:nth-child(4) {
+    top: -14%;
+    width: 12%;
+}
+
+.finger:nth-child(5) {
+    bottom: -4%;
+}
+
+.finger:nth-child(7) {
+    bottom: -3%;
+}
+
+.finger:nth-child(8) {
+    bottom: -14%;
+    width: 12%;
+}
+
+.nail.top {
+    top: 0.5vh;
+    border-radius: 30% 30% 50% 50%;
+}
+
+.nail.bottom {
+    top: -0.6vh;
+    border-radius: 50% 50% 30% 30%;
+}
+
+.finger:nth-child(4) .nail,
+.finger:nth-child(8) .nail {
+    /* cambiando el tamaño de las uñas de los dedos meñiques*/
+    height: 18%;
+}
+
+.circle {
+    /*position absolute para que no desarme la composicón de las manos. Height, widht y top con medidas relativas para que se mantenga centrado con respecto a las manos si cambian las medidas del viewport y la medida del top en % depende del porcentaje del height para que quede centrado*/
+    background-color: #247BA0;
+    border-radius: 50%;
+    height: 60%;
+    width: 80%;
+    position: absolute;
+    top: 20%;
+    animation: circle 4s 2s forwards infinite;
+}
+
+@keyframes circle {
+
+    /*animacion para el circle*/
+    0%,
+    100% {
+        scale: 1;
+    }
+
+    50% {
+        scale: 1.15;
+    }
+}
+
+@media screen and (min-width: 800px) {}
+
+
+@media screen and (min-width: 1100px) {
+    .about {
+        height: 15vh;
+    }
+
+    /*z-index 2 para que se superponga encima de las manos y lo que sale quede escondido
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    height: 15vh;
+    z-index: 2;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}*/
+    h1 {
+        display: block;
+        text-align: center;
+
+    }
+
+    h2 {
+        display: block;
+        text-align: center;
+    }
+
+    .dimensions {
+        height: 85vh;
+        /* position: relative;
+    display: flex;*/
+
+    }
+
+    .two {
+        /* un borde sutil abajo para delimitar el límite de las figuras de la sección three*/
+        width: 50%;
+        top: 15vh;
+
+    }
+
+    .three {
+        width: 50%;
+        top: 15vh;
+        left: 50%;
+
+
+    }
+
+
+    .hands {
+        /* se posiciona en relativo para poder subir las manos por debajo de la sección .about, por eso su medida es superior a la de su elemento padre, como el padre mide 85vh le sume 14vh y eso entre dos son 10vh que "sobresalen" fuera de la composición y por eso uso top -7vh, z index 1 para que quede encima del círculo */
+        position: relative;
+        top: -7vh;
+        width: 70%;
+        height: 99vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-content: space-between;
+        gap: 7%;
+        z-index: 1;
+
+    }
+
+    .finger {
+        height: 35vh;
+    }
+
+    .line {
+        display: none;
+    }
+
+    /*
 .nail{
     position: relative;
     background-color: red;
@@ -97,4 +381,17 @@ h2{
 .nail.bottom{
     top: -0.6vh;
     border-radius: 50% 50% 30% 30%;
+}
+.circle{/*position absolute para que no desarme la composicón de las manos. Height, widht y top con medidas relativas para que se mantenga centrado con respecto a las manos si cambian las medidas del viewport y la medida del top en % depende del porcentaje del height para que quede centrado
+    background-color: blue;
+    border-radius: 50%;
+    height: 55%;
+    width: 80%;
+    position: absolute;
+    top:22.5%;
+}*/
+    .circle {
+        height: 60%;
+        top: 20%;
+    }
 }
