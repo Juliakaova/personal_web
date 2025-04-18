@@ -64,7 +64,7 @@ section{/*como el contenido sobresale para poder navegar en él lateralmente hag
     overflow: hidden;
 }
 
-#about{
+#aboutSection{
     background-color: rgb(67, 67, 67);
     display: flex;
     justify-content: center;
@@ -164,20 +164,14 @@ section .theme{
     height: 100%;
     object-fit: contain;
 }
-button{
-    position: absolute;
-    z-index: 1;
-}
-button:nth-child(2){/*calcular el top para que quede centrado dentro del content*/
-    left: 10px;
-    top: 44vh;
-
+section{
+    position: relative;
 }
 
-button:nth-child(3){
-    right: 10px;
-    top: 44vh;
 
+.carousel button{/* estilo para los botones*/
+    display: none;
+    
 }
 
 
@@ -199,6 +193,36 @@ button:nth-child(3){
         font-size: 1.7em;
         padding:0 10%;
     }
+    
+    .carousel button{
+        position: absolute;
+        z-index: 1;
+        display: block;
+        height: 62vh;
+        font-size: 3em;
+        appearance: none;
+        color: rgb(67, 67, 67) ;
+        background-color: rgb(255, 144, 144) ;
+        padding: 5px 20px;
+        top: 13vh;
+        box-sizing: border-box;
+        border: 0px;
+    }
+    .carousel button:hover{
+        cursor: pointer;
+    }
+
+    .carousel button:nth-child(2){/*calcular el top para que quede centrado dentro del content*/
+        left: 0px;
+        /*top:calc(42vh - 5px);*/
+    
+    }
+    
+    .carousel button:nth-child(3){
+        right: 0px;
+    
+    }
+
 }
 
 
@@ -220,7 +244,7 @@ header{
     width: 75%;
     z-index: 3;
 }
-#about{/*sumando la distancia del nav (que esta en fixed) para que el contenido se ajuste al espacio visible*/
+#aboutSection{/*sumando la distancia del nav (que esta en fixed) para que el contenido se ajuste al espacio visible*/
     padding-top: 15vh;
 }
 section{
@@ -283,7 +307,7 @@ div.theme{
 }
 button:nth-child(2),
 button:nth-child(3){
-    top: 42vh;
+    top:calc(40vh - 40px);
 }
 button:nth-child(2){
     left: calc(25% + 10px ) ;
