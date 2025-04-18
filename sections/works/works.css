@@ -9,7 +9,7 @@ html, body{/*para que no salte directamente a cada id, que se note el scroll*/
 header{
     position: fixed;
     bottom: 0;
-    z-index: 1;
+    z-index:2;
     width: 100%;
     background-color: rgb(67, 67, 67);
     height: 15vh;
@@ -27,7 +27,7 @@ header a{
 .main{
     position: fixed;
     bottom:15vh;
-    z-index: 1;
+    z-index: 2;
     width: 100%;
     height: 10vh;
     background-color: #F3FFBD ;
@@ -89,8 +89,8 @@ section{/*como el contenido sobresale para poder navegar en él lateralmente hag
 }
 .about p{
     color: #F3FFBD;
-    margin-top: 5%;
-    padding: 0 20%;
+    margin-top: 8%;
+    padding: 0 5%;
     font-size: 0.9em;
     text-align: justify;
 }
@@ -133,7 +133,7 @@ section .theme{
 }
 
 .content{/* 100vh menos la altura del header , nav de el content, al resultado le resto la altura del.theme, divido entre dos y al resultado le sumo de nuevo el height de .theme, así obtengo la distancia de top para que quede centrado. left 0 para que el inicio del div esté a la izquierda y sobresalga hacia la derecha. Flex para que el contenido se mantenga en una sola fila, sobresaliendo y quedando fuera del viewport*/
-    background-color: rgba(255, 255, 255, 0.089);
+    background-color: rgba(255, 255, 255, 0);
     left: 0;
     height: 50vh;
     position: relative;
@@ -141,7 +141,13 @@ section .theme{
     display: flex;
     align-items: center;
     gap: 10%;
+    overflow-x: auto;/*al esta overflow hidden su padre y este en el eje x en auto permite deslizar lateralmente en el contenido que queda fuera del viewport*/
 }
+
+.content::-webkit-scrollbar{/*ocultar la barra de desplazamiento lateral por defecto del navegador que se ha generado al poner overflow-x en auto*/
+    display: none;
+}
+
 .content div:first-child{
     margin-left: 10%;
 }
@@ -158,9 +164,25 @@ section .theme{
     height: 100%;
     object-fit: contain;
 }
+button{
+    position: absolute;
+    z-index: 1;
+}
+button:nth-child(2){/*calcular el top para que quede centrado dentro del content*/
+    left: 10px;
+    top: 44vh;
+
+}
+
+button:nth-child(3){
+    right: 10px;
+    top: 44vh;
+
+}
 
 
-@media screen and (min-width: 800px) {
+
+@media screen and (min-width: 750px) {
 
     /*cambiar tamaños de letra*/
     .about{
@@ -219,7 +241,7 @@ section{
 .about p{
     margin-top: 0;
     padding: 0 15% 0 0;
-    font-size: 1.8em;
+    font-size: 1.6em;
 }
 
 div.theme{
@@ -245,10 +267,10 @@ div.theme{
     
 }
 .content{
-    padding-left: 25%;
+    position: relative;
+    margin-left: 25%;
     height: 60vh;
     top: 12vh;
-    background-color: rgba(255, 255, 255, 0.27);
     gap: 5%;
 }
 
@@ -259,7 +281,12 @@ div.theme{
 .content div:last-child{
     margin-right: 5%;
 }
-
-
+button:nth-child(2),
+button:nth-child(3){
+    top: 42vh;
+}
+button:nth-child(2){
+    left: calc(25% + 10px ) ;
+}
 
 }
