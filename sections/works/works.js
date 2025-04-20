@@ -2,7 +2,6 @@ const buttonsLeft = document.querySelectorAll(".carousel>.left");/* este selecto
 const buttonsRight = document.querySelectorAll(".carousel>.right");
 const contents = document.querySelectorAll(".carousel>.content");
 let increment = window.innerWidth / 2;
-console.log(increment)
 
 window.addEventListener("resize", () => { /*para que recalcule el increment si cambia el ancho del viewport/**/
     increment = window.innerWidth / 2;
@@ -45,6 +44,7 @@ const observer2D = new IntersectionObserver((entries) => {// escucha la visibili
     });
 }, options);
 
+//creo un array con lasdos secciones de 2D para poder hacer un bucle y que así amboas sean observadas, dando lugar a la misma acción (añadir la clase a 2D)
 const portraits = document.getElementById("portraits");
 const documentary = document.getElementById("documentary");
 const illustration = document.getElementById("illustration");
@@ -55,7 +55,7 @@ array2D.forEach(element2d => {
 });
 
 const observer3D = new IntersectionObserver((entries) => {// escucha la visibilidad del elemento que le indico en pantalla
-    console.log("hola")
+   
     entries.forEach(entry => {
         // Comprobamos si el elemento está visible
         if (entry.isIntersecting) {
@@ -66,6 +66,7 @@ const observer3D = new IntersectionObserver((entries) => {// escucha la visibili
         }
     });
 }, options);
+//creo un array con lasdos secciones de 3D para poder hacer un bucle y que así amboas sean observadas, dando lugar a la misma acción (añadir la clase a 3D)
 const jewelry = document.getElementById("jewelry");
 const textile = document.getElementById("textile");
 const array3D = [jewelry, textile]
@@ -75,7 +76,7 @@ array3D.forEach(element3d => {
 });
 
 const observerAbout = new IntersectionObserver((entries) => {// escucha la visibilidad del elemento que le indico en pantalla
-    console.log("hola")
+    
     entries.forEach(entry => {
         // Comprobamos si el elemento está visible
         if (entry.isIntersecting) {
@@ -90,21 +91,25 @@ const observerAbout = new IntersectionObserver((entries) => {// escucha la visib
 const about= document.getElementById("aboutSection");
 observerAbout.observe(about);
 
-/*
-const observer = new IntersectionObserver((entries) => {// escucha la visibilidad del elemento que le indico en pantalla
-    
-    entries.forEach(entry => {
-      // Comprobamos si el elemento está visible
-      if (entry.isIntersecting) {
-        // Si está visible, añadimos la clase al elemento que queremos modificar
-        nav2D[0].classList.add('here');
-      } else {
-        // Si no está visible, quitamos la clase
-       nav2D[0].classList.remove('here');
-      }
+//Añadir una clase para que cuando se haga click en una foto se muestre esa foto en grande
+
+const imgs= document.querySelectorAll(".content>img");
+const galery = document.querySelector(".galery");
+const imgModal = document.querySelector(".imgModal")
+let actualImg = 0;//posteriormente se le dará valor
+
+
+imgs.forEach((img, i) => {
+    img.addEventListener("click", () => {
+        actualImg = i;
+        imgModal.setAttribute("src", img.getAttribute("src"));//coge el atributo de la imagen clickada y se lo pone a la imagen de la sección galery
+        galery.classList.add("modal");
+        galery.classList.remove("hidden");
     });
-  },options);
+});
+//Cerrar la sección galery cuando esté abierta
 
-
-const portraits= document.getElementById("portraits");
-observer.observe(portraits);*/
+galery.addEventListener("click", () => {
+    galery.classList.remove("modal");
+    galery.classList.add("hidden");
+});

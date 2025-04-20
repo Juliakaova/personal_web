@@ -104,6 +104,7 @@ a{
     max-height:9% ;
     color: rgb(135, 53, 53);
     text-transform: uppercase;
+    font-family: "Outfit", sans-serif;
 }
 
 .camera {
@@ -215,8 +216,10 @@ ol{/* hago que desaparezca el ul para que solo se vea con la clase options2d u o
     text-align: center;
 }
 
-li a{
+li a{ /*estilos de texto*/
     color: #124d66;
+    font-family: "Outfit", sans-serif;
+    font-weight: 500;
 }
 
 .three {
@@ -270,6 +273,7 @@ li a{
     font-size: 1em;
     color: #F3FFBD;
     text-transform: uppercase;
+    font-family: "Outfit", sans-serif;
 }
 
 .finger.top {
