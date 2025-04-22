@@ -102,7 +102,7 @@ let actualImg = 0;//posteriormente se le dará valor
 imgs.forEach((img, i) => {
     img.addEventListener("click", () => {
         actualImg = i;
-        imgModal.setAttribute("src", img.getAttribute("src"));//coge el atributo de la imagen clickada y se lo pone a la imagen de la sección galery
+        imgModal.setAttribute("src", img.getAttribute("src"));/*coge el atributo de la imagen clickada y se lo pone a la imagen de la sección galery*/
         galery.classList.add("modal");
         galery.classList.remove("hidden");
     });

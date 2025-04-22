@@ -3,6 +3,8 @@
     padding: 0;
 }
 
+
+
 body {
     height: 100vh;
     background-color: #70C1B3;
@@ -12,7 +14,9 @@ body {
 .about {
     /*z-index 3 para que se superponga encima de los elemento de las seccion two que se esconden debajo de esta*/
     position: fixed;
-    background-color: rgb(67, 67, 67);
+    background-color:  #343434;
+    border: 3px solid #343434;
+    background-image: linear-gradient(to right, #62958b,  #343434 12%, rgb(38, 38, 38) 49%, rgb(38, 38, 38) 51%,  #343434 88%, #62958b );
     width: 100%;
     height: 14vh;
     z-index: 3;
@@ -34,21 +38,21 @@ a{
 
 }
 .about .master{
-    font-size: 1.3em;
+    font-size: 1.9em;
     color: #F3FFBD;
 
 }
 
 .about span {
-    color: #c3c3c3;
+    color: #70c1b3;
     text-align: center;
     font-size: 0.7em;
     font-family: "Boldonse", system-ui;
 }
 .about a :first-child,
 .about a :nth-child(3){/*separalos del span central*/
-    margin-right: 6%;
-    margin-left: 6%;
+    margin-right: 3%;
+    margin-left: 3%;
 }
 
 .dimensions {
@@ -90,21 +94,65 @@ a{
     text-transform: uppercase;
 }
 .two .title2{/*con js voy a darle forma de círculo, de ahí la necesidad del transform origin*/
-    height: 130%;
+    height: 100%;
     position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    transform-origin: bottom center;
+    width: 100%;
+
 }
 
-.title2 h2{
-    font-size:0.5em;
-    max-height:9% ;
-    color: rgb(135, 53, 53);
+.title2 h2{ 
     text-transform: uppercase;
     font-family: "Outfit", sans-serif;
+}
+.flash{/*le aplico efecto blur para integrarlo en la composición*/
+    filter: blur(0.2px);
+    position: absolute;
+    top: 6%;
+    right: 6%;
+    height: 15%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 14%;
+    background-color:  rgb(219, 107, 107);
+}
+.titleTop,/*para integrarlo en la composición y bajo opacidad*/
+.titleBottom{
+   animation: blur 6s 1s  forwards infinite;
+   color:  #F3FFBD;
+   font-size:0.5em;
+}
+
+@keyframes blur {/*imita el flash de una cámara*/
+   
+    0%{
+        filter: blur(0px);
+        color:  #F3FFBD;
+        
+    }
+
+    10%{
+        filter: blur(3px);
+        color:  #fdfff3;
+    }
+    
+    20%{
+        filter: blur(0px); 
+        color: #F3FFBD;
+        
+    }
+    100% {
+        filter: blur(0px);
+        color:  #F3FFBD;
+        
+    } 
+
 }
 
 .camera {
@@ -115,7 +163,7 @@ a{
     width: 80%;
     height: 70%;
     cursor: pointer;
-    background-image: linear-gradient(to right, rgb(252, 117, 117),rgb(252, 182, 182), rgb(252, 117, 117));
+    background-image: linear-gradient(to right, #fc7575,#fcb6b6, #fc7575);
     border-radius: 10%;
 }
 
@@ -125,7 +173,7 @@ a{
     left: 13%;
     width: 20%;
     height: 15%;
-    background-color: rgb(231, 114, 114);
+    background-color: rgb(214, 85, 85);
     border-radius: 15% 15% 5% 5%;
     transition: 1s;
     
@@ -254,7 +302,7 @@ li a{ /*estilos de texto*/
     position: relative;
     width: 16%;
     height: 24vh;
-    background-color: rgb(255, 212, 184);
+    background-color: #ffd4b8;
     display: flex;
     box-shadow: 4px 0px 8px #343434;
 }
@@ -384,21 +432,37 @@ li a{ /*estilos de texto*/
 
 
 @media screen and (min-width: 700px) {
+
+    .about{
+        background-image: linear-gradient(to right, #639d91,  #333333 12%,  #333333 88%, #639d91 );
+    }
     .about .master{
-        font-size: 2em;
+        font-size: 1.6em;
     }
     .about span{
-        font-size: 1.2em;
+        font-size: 2.8em;
     }
+    .title2 h2{
+        font-size: 0.9em;
+    }
+    .title h1,
+    .circle h1{
+        font-size:2.5em;
+    } 
+
+    .hands span{
+        font-size: 1.7em;
+    }
+
     .options2D li,
     .options3D li{
-        font-size: 2.5em;
+        font-size: 2.4em;
         padding: 35px;
     }
     .about a :first-child,
     .about a :nth-child(3){/*separalos del span central*/
-        margin-right: 10%;
-        margin-left: 10%;
+        margin-right: 3%;
+        margin-left: 3%;
     }
 }
 
@@ -406,26 +470,28 @@ li a{ /*estilos de texto*/
 @media screen and (min-width: 1100px) {
     .about {
         height: 15vh;
+        border: 3px solid #343434;
+        background-image: linear-gradient(to right,  #70c1b3 0% , #343434 18%,  #343434 82%,  #70c1b3 100%) ;
     }
 
     .about .master{
         font-size: 2em;
+        z-index: 3;
     }
     .about span{
-        font-size: 1em;
+        font-size: 3em;
+        color: #70c1b3;
     }
 
     .about a :first-child,
     .about a :nth-child(3){/*separalos del span central*/
-        margin-right: 20%;
-        margin-left: 20%;
+        margin-right:2%;
+        margin-left:2%;
     }
     
 
     .dimensions {
         height: 85vh;
-        /* position: relative;
-    display: flex;*/
 
     }
 
@@ -437,6 +503,34 @@ li a{ /*estilos de texto*/
     }
     .two h1{
         font-size:4em;
+    }
+    
+
+
+    @keyframes blur {
+   
+        0%{
+            filter: blur(0px);
+            color:  #F3FFBD;
+            
+        }
+    
+        10%{
+            filter: blur(4px);
+            color:  #fdfff3;
+        }
+        
+        20%{
+            filter: blur(0px); 
+            color: #F3FFBD;
+            
+        }
+        100% {
+            filter: blur(0px);
+            color:  #F3FFBD;
+            
+        } 
+    
     }
     .lens{
         border: 10px dashed rgb(153, 79, 10);
@@ -475,7 +569,7 @@ li a{ /*estilos de texto*/
         display: none;
     }
 
-    .nail h2{
+    .hands span{
         font-size: 2em;
     }
 

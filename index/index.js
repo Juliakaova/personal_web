@@ -47,15 +47,6 @@ setInterval(()=>{
     }, 1000);
 }, 6000);
 
-//curvar tittle2
-const circleTop= document.querySelector(".circleTop");
-const circleTopArray = circleTop.innerText.split("");
-let letters= "";
-
-for(let i= 0; i<circleTopArray.length; i++){
-    letters += `<span style= "transform: rotate(${i+1*10}deg);display: inline-block">${circleTopArray[i]}</span>`;
-}
-circleTop.innerHTML= letters;
 
 //dar visibilidad a los navs, a traves de clases, de esta manera solo puede estar visible uno de los navs del landing, nunca los dos a la vez y además pueden cerrarse de nuevo los navs haciendo click
 const dosD = document.querySelector(".camera");

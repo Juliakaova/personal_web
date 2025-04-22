@@ -2,8 +2,10 @@
     margin: 0;
     padding: 0;
 }
-html, body{/*para que no salte directamente a cada id, que se note el scroll*/
+
+html{/*para que no salte directamente a cada id, que se note el scroll y no salga la barra de scroll*/
     scroll-behavior: smooth;
+    scrollbar-width: none;
 }
 
 header{
@@ -100,7 +102,7 @@ section{/*como el contenido sobresale para poder navegar en él lateralmente hag
 #portraits,
 #documentary,
 #illustration{
-    background-color:  rgb(255, 144, 144);
+    background-color:  #ff9090;
 }
 
 #jewelry,
@@ -112,7 +114,7 @@ section{/*como el contenido sobresale para poder navegar en él lateralmente hag
     margin: 0 30px;
     text-align: center;
     text-transform: uppercase;
-    color: rgb(67, 67, 67) ;
+    color: #434343 ;
     font-family: "Outfit", sans-serif;
     font-weight: 700;
 }
@@ -130,8 +132,8 @@ section .theme{
 }
 #jewelry .theme,
 #textile .theme{
-    background-color: rgb(235, 110, 110) ;
-    border-top: 5px solid  rgb(224, 92, 92) ;
+    background-color: #eb6e6e ;
+    border-top: 5px solid  #e05c5c ;
     
 }
 #textile{/*este tiene que tener más altura que los demás y lo hago con margin para que no me de problemas al alinear contenido en este div*/
@@ -196,9 +198,8 @@ section .theme{
 .content img{
     height: 100%;
     object-fit: contain;
-}
-section{
-    position: relative;
+    cursor: pointer;
+    
 }
 
 
@@ -219,7 +220,7 @@ section{
     z-index: 5;
     top: 0;
     left: 0;
-    background-color: rgba(41, 41, 41, 0.727);
+    background-color: rgba(255, 255, 255, 0.807);
     height: 100vh;
     width: 100%;
 }
@@ -294,6 +295,7 @@ section{
         background-image: linear-gradient( to left, rgb(255, 157, 66) 70%, rgba(255, 144, 144, 0));
         background-color:  rgba(255, 157, 66, 0) ;
     }
+
 
 }
 
