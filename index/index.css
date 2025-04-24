@@ -12,7 +12,7 @@ body {
 }
 
 .about {
-    /*z-index 3 para que se superponga encima de los elemento de las seccion two que se esconden debajo de esta*/
+    /*z-index 3 to be superimposed on top of the elements of section 2 that are hidden underneath it*/
     position: fixed;
     background-color:  #343434;
     border: 3px solid #343434;
@@ -29,7 +29,7 @@ body {
 a{
     text-decoration: none;
 }
-.about a {/*alinear los elementos del enlace para que queden centrados*/
+.about a {/*align the link elements so that they are centered*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,7 +37,7 @@ a{
     text-transform: uppercase;
 
 }
-.about .master{
+.about .main{
     font-size: 1.9em;
     color: #F3FFBD;
 
@@ -50,13 +50,13 @@ a{
     font-family: "Boldonse", system-ui;
 }
 .about a :first-child,
-.about a :nth-child(3){/*separalos del span central*/
+.about a :nth-child(3){/*separates the lateral spans from the central span*/
     margin-right: 3%;
     margin-left: 3%;
 }
 
 .dimensions {
-    /* la dimension del height de estas secciones depende del height de la sección about, de esta forma reparte en dos espacios iguales el espacio restante para las dos secciones con la etiqueta dimensions*/
+    /*the size of the height of these sections depends on the height of the about section, so it divides the remaining space for the two sections with the dimensions tag into two equal spaces*/
     height: 43vh;
     position: relative;
     display: flex;
@@ -64,7 +64,7 @@ a{
 }
 
 .two {
-    /*z-index 2 para que se superponga encima de las manos y lo que sale quede escondido. Position fixed para sacarlo del flujo normal y posicionarlo justo debajo de la sección about */
+    /*z-index 2 so that it overlaps over the hands and what comes out is hidden. Position fixed to take it out of the normal flow and position it just below the about section */
     width: 100%;
     background-color: #70C1B3
         /*#d06161 */
@@ -76,7 +76,7 @@ a{
     justify-content: center;
     align-items: center;
 }
-.title{/*este div sirve para integrar y colocar el título centrado en lens, sin que este gire, para que sea legible*/
+.title{/*this div is used to integrate and place the title centered in lens, without rotating it, so that it is legible.*/
     position: absolute;
     border-radius: 50%;
     background-color: transparent;
@@ -93,7 +93,7 @@ a{
     color: #F3FFBD;
     text-transform: uppercase;
 }
-.two .title2{/*con js voy a darle forma de círculo, de ahí la necesidad del transform origin*/
+.two .title2{
     height: 100%;
     position: absolute;
     display: flex;
@@ -108,7 +108,7 @@ a{
     text-transform: uppercase;
     font-family: "Outfit", sans-serif;
 }
-.flash{/*le aplico efecto blur para integrarlo en la composición*/
+.flash{/*position them on the upper right side of the camera. I apply a blur effect to integrate it into the composition.*/
     filter: blur(0.2px);
     position: absolute;
     top: 6%;
@@ -122,18 +122,18 @@ a{
     border-radius: 14%;
     background-color:  rgb(219, 107, 107);
 }
-.titleTop,/*para integrarlo en la composición y bajo opacidad*/
+.titleTop,
 .titleBottom{
    animation: blur 6s 1s  forwards infinite;
-   color:  #F3FFBD;
+   color:  #fcb6b6;
    font-size:0.5em;
 }
 
-@keyframes blur {/*imita el flash de una cámara*/
+@keyframes blur {/*imitates the flash of a camera*/
    
     0%{
         filter: blur(0px);
-        color:  #F3FFBD;
+        color:  #fcb6b6;
         
     }
 
@@ -144,12 +144,12 @@ a{
     
     20%{
         filter: blur(0px); 
-        color: #F3FFBD;
+        color: #fcb6b6;
         
     }
     100% {
         filter: blur(0px);
-        color:  #F3FFBD;
+        color:  #fcb6b6;
         
     } 
 
@@ -167,7 +167,7 @@ a{
     border-radius: 10%;
 }
 
-.shutter {/*lo posiciono desde el bottom porque al animarlo y restarle altura necesito que mantenga su posición en el bottom*/
+.shutter {/*position it from the bottom because when I animate it I don't want it to be cut off.*/
     position: absolute;
     bottom: 98%;
     left: 13%;
@@ -185,7 +185,7 @@ a{
 
 
 .line {
-    /* una línea para delimitar el límite de las figuras de la sección three*/
+    /* a line to delimit the boundary of the figures of section three on mobile and tablet*/
     background-color: #247BA0;
     width: 80%;
     height: 4px;
@@ -196,7 +196,7 @@ a{
 
 
 .lens {
-    /*para intentar mantener la forma circular en el mayor rango posible de medidas de pantalle uso la proporción 1/1 de aspect-ratio, y una animación que gira el div entero y se hace notar por el tipo de border */
+    /*to try to keep the circular shape in the widest possible range of screen sizes I use the 1/1 aspect-ratio, and an animation that rotates the whole div and is made noticeable by the border dashed */
     border-radius: 50%;
     height: 65%;
     aspect-ratio: 1/1;
@@ -206,7 +206,8 @@ a{
     animation: rotate 6s 1s forwards infinite;
 }
 
-@keyframes rotate {/*imita el movimiento del enfoque de una cámara*/
+@keyframes rotate {/*simulates the focus movement of a camera
+    */
     0% ,10%,100%{
         transform: rotate(0deg);
     }
@@ -223,7 +224,7 @@ a{
 }
 
 nav.options2D,
-nav.options3D{/*esto afectara a los dos navs, el de la sección 2D como el 3D, apareceran despues del evento click, tiene un fondo que no es del todo opaco para que sea ves la seccion de fondo*/
+nav.options3D{/*this will affect both navs, the 2D section and the 3D section, they will appear after the click event, it has a background that is not completely opaque so that you can see the background section*/
     position: absolute;
     background-color: #343434aa;
     width: 100%;
@@ -231,21 +232,17 @@ nav.options3D{/*esto afectara a los dos navs, el de la sección 2D como el 3D, a
     
 
 }
-ol{/* hago que desaparezca el ul para que solo se vea con la clase options2d u options3D */
+ol{/* to remove the ol so that it is only visible with the class options2d or options3D */
     display:none
 }
 
-.options2D{/* z-index 1 para que quede por encima*/
-    z-index: 1;
-}
-
-.options3D{
-    /* z-index 2 para que quede por encima, ya que hands tiene z-index 2*/
+.options2D,
+.options3D{/* z-index 2 to be above. To consider .hands that has zindex 1*/
     z-index: 2;
 }
 
 .options2D ol,
-.options3D ol{ /*mismo widht y height que la sección y el nav, en este caso el porcentaje hace referencia al nav, display flex para distribuir su conteido dentro en vertical (column)*/
+.options3D ol{ /*same widht and height as the section and nav, in this case the percentage refers to the nav, display flex to distribute its content inside vertically (column)*/
     width: 100%;
     height: 100%;
     display: flex;
@@ -254,7 +251,7 @@ ol{/* hago que desaparezca el ul para que solo se vea con la clase options2d u o
     align-items: center;
 }
 .options2D li,
-.options3D li{/*se eliminan las viñetas y se fuerza que este en mayusculas además de dar forma a cada li*/
+.options3D li{/*the bullets are eliminated and it is forced to be in capitals, in addition to shaping each li*/
     list-style-type: none;
     text-transform: uppercase;
     background-color: rgba(184, 232, 230, 0.837);
@@ -264,13 +261,13 @@ ol{/* hago que desaparezca el ul para que solo se vea con la clase options2d u o
     text-align: center;
 }
 
-li a{ /*estilos de texto*/
+li a{ /*text style*/
     color: #124d66;
     font-family: "Outfit", sans-serif;
     font-weight: 500;
 }
 
-.three {
+.three {/*the top is the sum of the height of the about section and 2D section*/
     width: 100%;
     background-color: #70C1B3;
     position: fixed;
@@ -281,8 +278,7 @@ li a{ /*estilos de texto*/
 
 }
 
-.hands {
-    /* se posiciona en relativo para poder subir las manos por debajo de la sección .about, por eso su medida es superior a la de su elemento padre, como el padre mide 43vh le sume 20vh y eso entre dos son 10vh que "sobresalen" fuera de la composición y por eso uso top -10vh, z index 1 para que quede encima del círculo */
+.hands { /* it is positioned in relative to be able to raise the hands below the .about section, so its size is higher than that of its parent element, as the parent measures 43vh I added 20vh and that between two is 10vh that “protrude” out of the composition and so I use top -10vh, z index 1 to be above the circle*/
     position: relative;
     top: -10vh;
     width: 70%;
@@ -298,7 +294,7 @@ li a{ /*estilos de texto*/
 }
 
 .finger {
-    /*Display flex para ubicar la uñas posteriormente*/
+    /*Display flex to position the nails*/
     position: relative;
     width: 16%;
     height: 24vh;
@@ -307,7 +303,7 @@ li a{ /*estilos de texto*/
     box-shadow: 4px 0px 8px #343434;
 }
 
-.nail {/*display flex con center para que el texto se centre en la uña*/
+.nail {/*display flex with center values to position the text centered on the nail*/
     position: relative;
     background-color: red;
     height: 25%;
@@ -325,33 +321,32 @@ li a{ /*estilos de texto*/
 }
 
 .finger.top {
-    /*centrarlas y ubicarlas en el bottom de su elemento padre con flex-end */
+    /*center and place them at the bottom of their parent element with flex-end */
     justify-content: center;
     align-items: flex-end;
     border-radius: 0% 0% 40% 40%;
     transition: 1s;
-    /*animation: handtop 3s 4s forwards infinite;*/
 }
 
 .marginTop {
-    /*esta clase la añadiré con javascript para animar los dedos, usando margin y mo alterando el top, ya que cada uno tiene su propio top y esto me lo simplifica*/
+    /*I will add this class with javascript to animate the fingers, using margin and not altering the top, since each one has its own top and this simplifies it*/
     margin-top: 5%;
     transition: 1s;
 }
 
-.marginBottom {
+.marginBottom {/*This class will be added to with javascript*/
     margin-bottom: 5%;
     transition: 1s;
 }
 
 .finger.bottom {
-    /*centrar las uñas inferioresy darles forma, al estar en relative no necesito especificar que estén arriba*/
+    /*center the lower nails and shape them, as they are in relative and stretch, the default value in flex, so I don't need to specify that they are on top*/
     justify-content: center;
     border-radius: 40% 40% 0% 0%;
     transition: 1s;
 }
 
-/*cambio la altura de los dedos que no serían el indice para que simule más la apariencia de mano*/
+/*change the height of the fingers other than the middle finger, to simulate the appearance of a hand.*/
 .finger:nth-child(3) {
     top: -3%;
 }
@@ -390,12 +385,12 @@ li a{ /*estilos de texto*/
 
 .finger:nth-child(4) .nail,
 .finger:nth-child(8) .nail {
-    /* cambiando el tamaño de las uñas de los dedos meñiques*/
+    /* changing the size of the little finger nails*/
     height: 18%;
 }
 
 .circle {
-    /*position absolute para que no desarme la composicón de las manos. Height, widht y top con medidas relativas para que se mantenga centrado con respecto a las manos si cambian las medidas del viewport y la medida del top en % depende del porcentaje del height para que quede centrado*/
+    /*position absolute so that it does not disassemble the composition of the hands. Height, widht and top with relative measures so that it remains centered with respect to the hands if they change the measures of the viewport and the measure of the top in % depends on the percentage of the height so that it remains centered*/
     
     background-image: linear-gradient(to bottom, #1f6c8e,#267fa4,#1f6c8e );
     border-radius: 50%;
@@ -418,7 +413,7 @@ li a{ /*estilos de texto*/
 
 @keyframes circle {
 
-    /*animacion para el circle*/
+    /*animation for the circle*/
     0%,
     100% {
         scale: 1;
@@ -436,7 +431,7 @@ li a{ /*estilos de texto*/
     .about{
         background-image: linear-gradient(to right, #639d91,  #333333 12%,  #333333 88%, #639d91 );
     }
-    .about .master{
+    .about .main{
         font-size: 1.6em;
     }
     .about span{
@@ -460,7 +455,7 @@ li a{ /*estilos de texto*/
         padding: 35px;
     }
     .about a :first-child,
-    .about a :nth-child(3){/*separalos del span central*/
+    .about a :nth-child(3){/*separate them from the central span*/
         margin-right: 3%;
         margin-left: 3%;
     }
@@ -474,7 +469,7 @@ li a{ /*estilos de texto*/
         background-image: linear-gradient(to right,  #70c1b3 0% , #343434 18%,  #343434 82%,  #70c1b3 100%) ;
     }
 
-    .about .master{
+    .about .main{
         font-size: 2em;
         z-index: 3;
     }
@@ -482,9 +477,9 @@ li a{ /*estilos de texto*/
         font-size: 3em;
         color: #70c1b3;
     }
-
+    /*in desktop changes the arrangement of the sections being 2D and 3D horizontally side by side, changes their top, their height and their width*/
     .about a :first-child,
-    .about a :nth-child(3){/*separalos del span central*/
+    .about a :nth-child(3){/*separate them from the central span*/
         margin-right:2%;
         margin-left:2%;
     }
@@ -496,8 +491,7 @@ li a{ /*estilos de texto*/
     }
 
     .two {
-        /* un borde sutil abajo para delimitar el límite de las figuras de la sección three*/
-        width: 50%;
+        width: 50%;/*This width will in turn determine the width of 3D*/
         top: 15vh;
 
     }
@@ -511,7 +505,7 @@ li a{ /*estilos de texto*/
    
         0%{
             filter: blur(0px);
-            color:  #F3FFBD;
+            color:  #fcb6b6;
             
         }
     
@@ -522,12 +516,12 @@ li a{ /*estilos de texto*/
         
         20%{
             filter: blur(0px); 
-            color: #F3FFBD;
+            color: #fcb6b6;
             
         }
         100% {
             filter: blur(0px);
-            color:  #F3FFBD;
+            color:  #fcb6b6;
             
         } 
     
@@ -547,7 +541,7 @@ li a{ /*estilos de texto*/
 
 
     .hands {
-        /* se posiciona en relativo para poder subir las manos por debajo de la sección .about, por eso su medida es superior a la de su elemento padre, como el padre mide 85vh le sume 14vh y eso entre dos son 10vh que "sobresalen" fuera de la composición y por eso uso top -7vh, z index 1 para que quede encima del círculo */
+        /* it is positioned in relative to be able to raise the hands below the .about section, so its size is higher than its parent element, as the parent measures 85vh I added 14vh and that divided in two is 7vh that “protrude” out of the composition and that is why I use top -7vh, z index 1 to be above the circle */
         position: relative;
         top: -7vh;
         width: 70%;

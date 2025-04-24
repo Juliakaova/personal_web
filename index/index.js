@@ -3,7 +3,7 @@ const bottomFingers = document.querySelectorAll(".bottom");
 const shutter= document.querySelector(".shutter");
 
 
-// empiezo con este setTimeOut para empezar la animación de los fingers, como el intervalo no comienza hasta los 2s y quiero que empiece en 1s, de esta manera me permite comezar antes a nivel visual la animación
+//I start with this setTimeOut to start the fingers animation, as the interval does not start until 2s and I want it to start in 1s, this way it allows me to visually start the animation earlier
 topFingers.forEach((topFinger) => {
     setTimeout(() => {
         topFinger.classList.add("marginTop");
@@ -16,7 +16,7 @@ bottomFingers.forEach((bottomFinger) => {
     }, 1000);
 });
 
-//este intervalo me sirve para animar los finger top y bottom, de esta forma cada add y remove tarda un segundo, al repetirse el intervalo cada dos segundos estará en movimiento continuo
+//this interval is used to animate the finger top and bottom, this way each add and remove takes one second, repeating the interval every two seconds it will be in continuous movement
 setInterval(() => {
     topFingers.forEach((topFinger) => {
         topFinger.classList.remove("marginTop");
@@ -33,7 +33,7 @@ setInterval(() => {
     });
 }, 2000);
 
-//voy a animar el botón de la cámara de tal forma que se coordine con la animación de lens, del mismo modo que la animación de los dedos, hago un intervalo de tiempo, pero anteriormente un setTimeOut, para que la animación comience al abrirse la web
+//I am going to animate the camera button in such a way that it coordinates with the lens animation, in the same way as the finger animation, I make a time interval, but previously a setTimeOut, so that the animation starts when the web is opened
 setTimeout(() => {
     shutter.classList.add("click");
 }, 0);
@@ -48,7 +48,7 @@ setInterval(()=>{
 }, 6000);
 
 
-//dar visibilidad a los navs, a traves de clases, de esta manera solo puede estar visible uno de los navs del landing, nunca los dos a la vez y además pueden cerrarse de nuevo los navs haciendo click
+//give visibility to the navs, through classes, this way only one of the navs of the landing can be visible, never both at the same time, and also the navs can be closed again by clicking on them
 const dosD = document.querySelector(".camera");
 const navs = document.querySelectorAll("nav");
 const tresD = document.querySelector(".hands");
