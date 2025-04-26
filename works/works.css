@@ -3,10 +3,17 @@
     padding: 0;
 }
 
-html{/*not jump directly to each id, so that the scroll is noticeable and the scroll bar does not appear*/
-    scroll-behavior: smooth;
-    scrollbar-width: none;
+html{
+    scrollbar-width: none;   
 }
+
+.snap-container{/*to add scroll snap type in desktop*/
+    height: 100vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    scroll-behavior: smooth;/*not jump directly to each id, so that the scroll is noticeable and the scroll bar does not appear*/
+}
+
 
 header{
     position: fixed;
@@ -64,6 +71,7 @@ section{/*as the content protrudes so that it can be navigated laterally, I make
     width: 100%;
     position: relative;
     overflow: hidden;
+    scroll-snap-align: start;
 }
 
 #aboutSection{
@@ -223,6 +231,7 @@ section .theme{
     background-color: rgba(255, 255, 255, 0.807);
     height: 100vh;
     width: 100%;
+    cursor: pointer;
 }
 .modal img{
     height: 90vh;
@@ -305,6 +314,9 @@ section .theme{
 html{/*the scroll starts at 15vh from the top, this way when clicking on the nav addresses the content starts just below the nav*/
     scroll-padding-top: 15vh;
 }  
+.snap-container{
+    scroll-snap-type: y proximity;/*when you are close to a section while scrolling it will snap to its container at the end (with end) in desktop*/
+}
 
 header{
     top:0;
@@ -325,6 +337,7 @@ section{
     height: 85vh;
     position: relative;
     border-bottom: 3px solid #cc6709;
+    scroll-snap-align: end; /*to give a bottom reference, because the nav in desktop is at the top*/
 }
 
 .about{
