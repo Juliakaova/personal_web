@@ -8,7 +8,7 @@ html{
 }
 
 .snap-container{/*to add scroll snap type in desktop*/
-    height: 100vh;
+    height: 100dvh;
     overflow-y: scroll;
     scrollbar-width: none;
     scroll-behavior: smooth;/*not jump directly to each id, so that the scroll is noticeable and the scroll bar does not appear*/
@@ -21,7 +21,7 @@ header{
     z-index:2;
     width: 100%;
     background-color: rgb(67, 67, 67);
-    height: 15vh;
+    height: 15dvh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,10 +35,10 @@ header a{
 
 .main{
     position: fixed;
-    bottom:15vh;
+    bottom:15dvh;
     z-index: 2;
     width: 100%;
-    height: 10vh;
+    height: 10dvh;
     background-color: #F3FFBD ;
     display:flex;
 }
@@ -67,7 +67,7 @@ header a{
 
 
 section{/*as the content protrudes so that it can be navigated laterally, I make sure that whatever protrudes from the section is hidden so that it does not break the composition*/
-    height: 75vh;
+    height: 75dvh;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -128,7 +128,7 @@ section{/*as the content protrudes so that it can be navigated laterally, I make
 }
 section .theme{
     width: 100%;
-    height: 13vh;
+    height: 13dvh;
     background-color: #db7a1f;
     border-top: 5px solid  #cc6709 ;
     box-sizing: border-box;
@@ -145,12 +145,12 @@ section .theme{
     
 }
 #textile{/*this one has to be higher than the others because of the fixed nav and I do it with margin so that it does not give me problems when aligning content in this div*/
-    margin-bottom: 25vh;
+    margin-bottom: 25dvh;
 }
 .leftGradient{/*these gradients are to show that you have to slide sideways, since the side buttons are deactivated on mobile phones*/
     position: absolute;
     z-index: 1;
-    top:14vh;
+    top:14dvh;
     left: 0;
     height: 80%;
     width: 10%;
@@ -161,7 +161,7 @@ section .theme{
 .rightGradient{
     position: absolute;
     z-index: 1;
-    top:14vh;
+    top:14dvh;
     right: 0;
     height: 80%;
     width: 10%;
@@ -179,12 +179,12 @@ section .theme{
 }
 
 
-.content{/* 100vh minus the height of the header and minus the nav of the content, to the result I subtract the height of the .theme, divide by two and to the result I add again the height of .theme, this way I obtain the distance of top so that it is centered. left 0 so that the beginning of the div is to the left and protrudes towards the right. Flex so that the content is kept in a single row, protruding and staying out of the viewport*/
+.content{/* 100dvh minus the height of the header and minus the nav of the content, to the result I subtract the height of the .theme, divide by two and to the result I add again the height of .theme, this way I obtain the distance of top so that it is centered. left 0 so that the beginning of the div is to the left and protrudes towards the right. Flex so that the content is kept in a single row, protruding and staying out of the viewport*/
     background-color: rgba(255, 255, 255, 0);
     left: 0;
-    height: 50vh;
+    height: 50dvh;
     position: relative;
-    top:19vh ;
+    top:19dvh ;
     display: flex;
     align-items: center;
     gap: 10%;
@@ -229,12 +229,12 @@ section .theme{
     top: 0;
     left: 0;
     background-color: rgba(255, 255, 255, 0.807);
-    height: 100vh;
+    height: 100dvh;
     width: 100%;
     cursor: pointer;
 }
 .modal img{
-    height: 90vh;
+    height: 90dvh;
     width: 90%;
     object-fit: contain;
 }
@@ -267,13 +267,13 @@ section .theme{
         position: absolute;
         z-index: 1;
         display: block;
-        height: calc(62vh - 2px);
+        height: calc(62dvh - 2px);
         font-size: 3em;
         appearance: none;
         color: rgb(67, 67, 67) ;
         background-color: rgba(255, 144, 144, 0) ;
         padding: 0px 20px;
-        top: calc(13vh + 1px);
+        top: calc(13dvh + 1px);
         box-sizing: border-box;
         border: 0px;
     }
@@ -311,8 +311,8 @@ section .theme{
 
 @media screen and (min-width: 1100px){
 
-html{/*the scroll starts at 15vh from the top, this way when clicking on the nav addresses the content starts just below the nav*/
-    scroll-padding-top: 15vh;
+html{/*the scroll starts at 15dvh from the top, this way when clicking on the nav addresses the content starts just below the nav*/
+    scroll-padding-top: 15dvh;
 }  
 .snap-container{
     scroll-snap-type: y proximity;/*when you are close to a section while scrolling it will snap to its container at the end (with end) in desktop*/
@@ -325,16 +325,16 @@ header{
 }
 .main{
     top:0;
-    height:15vh ;
+    height:15dvh ;
     left: 25%;
     width: 75%;
     z-index: 3;
 }
 #aboutSection{/*adding the distance of the nav (which is fixed) so that the content fits the visible space*/
-    padding-top: 15vh;
+    padding-top: 15dvh;
 }
 section{
-    height: 85vh;
+    height: 85dvh;
     position: relative;
     border-bottom: 3px solid #cc6709;
     scroll-snap-align: end; /*to give a bottom reference, because the nav in desktop is at the top*/
@@ -357,9 +357,9 @@ section{
 
 div.theme{
     width: 25%;
-    height: 85vh;
+    height: 85dvh;
     border-top: 0;
-    top: 0vh;
+    top: 0dvh;
     z-index:2;
 }
 
@@ -369,7 +369,7 @@ div.theme{
 }
 
 #textile{/*I remove the margin height I gave to this section*/
-    margin-bottom: 0vh;
+    margin-bottom: 0dvh;
 }
 
 .theme h2{
@@ -381,8 +381,8 @@ div.theme{
 .content{
     position: relative;
     margin-left: 25%;
-    height: 60vh;
-    top: 12vh;
+    height: 60dvh;
+    top: 12dvh;
     gap: 5%;
 }
 
@@ -401,7 +401,7 @@ div.theme{
     font-size: 3em;
    
     padding: 0px 20px;
-    top: 0vh;
+    top: 0dvh;
  
 }
 

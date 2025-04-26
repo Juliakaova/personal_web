@@ -6,7 +6,7 @@
 
 
 body {
-    height: 100vh;
+    height: 100ddvh;
     background-color: #70C1B3;
 
 }
@@ -18,7 +18,7 @@ body {
     border: 3px solid #343434;
     background-image: linear-gradient(to right, #62958b,  #343434 12%, rgb(38, 38, 38) 49%, rgb(38, 38, 38) 51%,  #343434 88%, #62958b );
     width: 100%;
-    height: 14vh;
+    height: 14dvh;
     z-index: 3;
     display: flex;
     flex-direction: column;
@@ -57,7 +57,7 @@ a{
 
 .dimensions {
     /*the size of the height of these sections depends on the height of the about section, so it divides the remaining space for the two sections with the dimensions tag into two equal spaces*/
-    height: 43vh;
+    height: 43dvh;
     position: relative;
     display: flex;
 
@@ -70,7 +70,7 @@ a{
         /*#d06161 */
     ;
     position: fixed;
-    top: 14vh;
+    top: 14dvh;
     z-index: 2;
     display: flex;
     justify-content: center;
@@ -272,17 +272,17 @@ li a{ /*text style*/
     background-color: #70C1B3;
     position: fixed;
     display: flex;
-    top: calc(14vh + 43vh);
+    top: calc(14dvh + 43dvh);
     justify-content: center;
 
 
 }
 
-.hands { /* it is positioned in relative to be able to raise the hands below the .about section, so its size is higher than that of its parent element, as the parent measures 43vh I added 20vh and that between two is 10vh that “protrude” out of the composition and so I use top -10vh, z index 1 to be above the circle*/
+.hands { /* it is positioned in relative to be able to raise the hands below the .about section, so its size is higher than that of its parent element, as the parent measures 43dvh I added 20dvh and that between two is 10dvh that “protrude” out of the composition and so I use top -10dvh, z index 1 to be above the circle*/
     position: relative;
-    top: -10vh;
+    top: -10dvh;
     width: 70%;
-    height: 63vh;
+    height: 63dvh;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -297,7 +297,7 @@ li a{ /*text style*/
     /*Display flex to position the nails*/
     position: relative;
     width: 16%;
-    height: 24vh;
+    height: 24dvh;
     background-color: #ffd4b8;
     display: flex;
     box-shadow: 4px 0px 8px #343434;
@@ -374,12 +374,12 @@ li a{ /*text style*/
 }
 
 .nail.top {
-    top: 0.5vh;
+    top: 0.5dvh;
     border-radius: 30% 30% 50% 50%;
 }
 
 .nail.bottom {
-    top: -0.6vh;
+    top: -0.6dvh;
     border-radius: 50% 50% 30% 30%;
 }
 
@@ -464,7 +464,7 @@ li a{ /*text style*/
 
 @media screen and (min-width: 1100px) {
     .about {
-        height: 15vh;
+        height: 15dvh;
         border: 3px solid #343434;
         background-image: linear-gradient(to right,  #70c1b3 0% , #343434 18%,  #343434 82%,  #70c1b3 100%) ;
     }
@@ -486,13 +486,13 @@ li a{ /*text style*/
     
 
     .dimensions {
-        height: 85vh;
+        height: 85dvh;
 
     }
 
     .two {
         width: 50%;/*This width will in turn determine the width of 3D*/
-        top: 15vh;
+        top: 15dvh;
 
     }
     .two h1{
@@ -533,7 +533,7 @@ li a{ /*text style*/
 
     .three {
         width: 50%;
-        top: 15vh;
+        top: 15dvh;
         left: 50%;
 
 
@@ -541,11 +541,11 @@ li a{ /*text style*/
 
 
     .hands {
-        /* it is positioned in relative to be able to raise the hands below the .about section, so its size is higher than its parent element, as the parent measures 85vh I added 14vh and that divided in two is 7vh that “protrude” out of the composition and that is why I use top -7vh, z index 1 to be above the circle */
+        /* it is positioned in relative to be able to raise the hands below the .about section, so its size is higher than its parent element, as the parent measures 85dvh I added 14dvh and that divided in two is 7dvh that “protrude” out of the composition and that is why I use top -7dvh, z index 1 to be above the circle */
         position: relative;
-        top: -7vh;
+        top: -7dvh;
         width: 70%;
-        height: 99vh;
+        height: 99dvh;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
@@ -556,7 +556,7 @@ li a{ /*text style*/
     }
 
     .finger {
-        height: 35vh;
+        height: 35dvh;
     }
 
     .line {
