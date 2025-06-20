@@ -468,6 +468,7 @@ li a{ /*text style*/
         height: 15dvh;
         border: 3px solid #343434;
         background-image: linear-gradient(to right,  #70c1b3 0% , #343434 18%,  #343434 82%,  #70c1b3 100%) ;
+        box-sizing: border-box;
     }
 
     .about .main{
