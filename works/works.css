@@ -228,7 +228,7 @@ section .theme{
     z-index: 5;
     top: 0;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.807);
+    background-color: rgba(11, 11, 11, 0.807);
     height: 100dvh;
     width: 100%;
     cursor: pointer;
