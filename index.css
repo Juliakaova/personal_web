@@ -16,6 +16,7 @@ body {
     position: fixed;
     background-color:  #343434;
     border: 3px solid #343434;
+    box-sizing: border-box;
     background-image: linear-gradient(to right, #62958b,  #343434 12%, rgb(38, 38, 38) 49%, rgb(38, 38, 38) 51%,  #343434 88%, #62958b );
     width: 100%;
     height: 14dvh;
